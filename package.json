@@ -1,0 +1,26 @@
+{
+  "name": "ccd",
+  "version": "1.0.0",
+  "description": "Custom Change Directory: `cd` with built-in tree navigator",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mismith/ccd.git"
+  },
+  "keywords": [
+    "cd",
+    "directory",
+    "file",
+    "tree",
+    "picker"
+  ],
+  "author": "Murray Smith <murray@mismith.info>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mismith/ccd/issues"
+  },
+  "homepage": "https://github.com/mismith/ccd#readme",
+  "dependencies": {
+    "inquirer": "^2.0.0"
+  }
+}
