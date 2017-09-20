@@ -3,7 +3,10 @@
 function ccd() {
   # some concepts adapted from: https://bbs.archlinux.org/viewtopic.php?id=105732
 
-  DIRS=(*/)
+  ORIGINAL_IFS=$IFS
+  IFS=$'\n'
+  DIRS=(`CLICOLOR_FORCE=1 ls -lad */`)
+  IFS=$ORIGINAL_IFS
 
   TOTAL_NUMBER=${#DIRS[@]} # total number of items
   DIRS+=(..) # store hidden "up-a-level" dir
@@ -92,6 +95,11 @@ function ccd() {
 
   } >&2 # end capture
 
-  $SELECTED && cd "${DIRS[$CURRENT_POSITION - 1]}"
+  # parse the folder name out from ls's output
+  DIR="${DIRS[$CURRENT_POSITION - 1]##*:}" # remove all chars until (and including) ":"
+  DIR="${DIR#* }" # trim all chars until (and including) first " "
+  DIR="$(echo $DIR | sed $'s,\x1b\\[[0-9;]*[a-zA-Z],,g')" # strip coloring/formatting to get raw string
+
+  $SELECTED && cd "${DIR}"
   $RECURSE && ccd
 }
