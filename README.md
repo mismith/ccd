@@ -2,6 +2,11 @@
 Custom Change Directory: `cd` with built-in tree navigator
 
 
+## Installation
+1. Download `ccd.sh` to your Mac
+2. Run `echo -e "\n. <path/to>/ccd.sh" >> ~/.bash_profile` to add the alias to your Terminal
+3. Restart Terminal (or open a new window) for the changes to take effect
+
 ## Usage
 - `ccd` to start in the current directory
 - to navigate dirs, use up + down arrow keys
