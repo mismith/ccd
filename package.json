@@ -1,9 +1,13 @@
 {
-  "name": "ccd",
-  "version": "1.0.0",
+  "name": "ccd.js",
+  "version": "2.0.0",
   "description": "Custom Change Directory: `cd` with built-in tree navigator",
   "author": "Murray Smith <murray@mismith.info>",
-  "main": "index.js",
+  "main": "bin/ccd.sh",
+  "bin": {
+    "ccd": "bin/ccd.sh",
+    "ccd.js": "src/ccd.js"
+  },
   "license": "ISC",
   "homepage": "https://github.com/mismith/ccd#readme",
   "repository": {
@@ -19,5 +23,5 @@
     "file",
     "tree",
     "picker"
-  ],
+  ]
 }

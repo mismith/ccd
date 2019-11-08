@@ -1,22 +1,18 @@
 # ccd
 Custom Change Directory: `cd` with built-in tree navigator
 
+![Demo GIF](./demo.gif)
 
 ## Installation
-1. Download `ccd.sh` to your Mac
-2. Run `echo -e "\n. <path/to>/ccd.sh" >> ~/.bash_profile` to add the alias to your Terminal
-3. Restart Terminal (or open a new window) for the changes to take effect
+1. `npm i -g ccd.js` or `yarn global add ccd.js`
+2. In your `~/.zshrc`/`~/.bash_profile`, add `. $(npm bin -g)/ccd` or `. $(yarn global bin)/ccd`
+3. Open a new shell (or source your shell profile)
 
 ## Usage
 - `ccd` to start in the current directory
-- to navigate dirs, use up + down arrow keys
-- to move into a folder (e.g. open it), use right arrow key
-- to move up a level, use left arrow key
-- to select a dir, press enter (or space)
-- to abort, press Ctrl+C (or esc?)
-
-
-## TODO
-- fix empty directories behavior
-- save last-selected dir when moving up a level
-- add key to select currently open directory (rather than one of its subfolders)
+- <kbd>up</kbd>/<kbd>down</kbd>: change selection
+- <kbd>right</kbd>: move into selected directory
+- <kbd>left</kbd>: move to parent directory
+- <kbd>enter</kbd>: `cd` to selected directory
+- <kbd>space</kbd>: `cd` to open/active directory
+- <kbd>esc</kbd>/<kbd>ctrl</kbd><kbd>c</kbd>: quit/cancel
